@@ -1,0 +1,163 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  /* fill viewport height for vertical centering */
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.SoryavongSama_border {
+  display: inline-block;
+  /* shrink-wrap to content */
+  border-radius: 50px;
+  padding: 20px;
+  /* add some padding */
+  background: white;
+  position: relative;
+  z-index: 1;
+
+  background-image: url('Background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+  width: 500;
+  height: 680px;
+}
+
+
+.SoryavongSama_border::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: 50px;
+  padding: 10px;
+  background: linear-gradient(90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red);
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rainbowFlow 4s linear infinite;
+}
+
+.SoryavongSama_clear {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  gap: 30px;
+  justify-content: center;
+}
+
+.SoryavongSama_container {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 20px;
+  justify-content: center;
+}
+
+@keyframes rainbowFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.vong_display {
+  width: 400px;
+  height: 80px;
+  border-radius: 24px;
+  margin-top: 24px;
+  margin-left: 10px;
+  margin: 24px auto 0 auto;
+  display: block;
+  font-size: larger;
+  font-weight: bold;
+  color: grey;
+  padding: 12px;
+}
+
+.btn_clear {
+  width: 180px;
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: red;
+  border-radius: 12px;
+  color: white;
+}
+
+.btn_backspace {
+  width: 180px;
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: white;
+  border-radius: 12px;
+  color: black;
+}
+
+.btn_number {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: white;
+  border-radius: 12px;
+  color: gray;
+}
+
+.btn_dot {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: white;
+  border-radius: 12px;
+  color: gray;
+}
+
+.btn_operator{
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: orange;
+  border-radius: 12px;
+  color: white;
+}
+
+.btn_equal {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: orange;
+  border-radius: 12px;
+  color: white;
+}
